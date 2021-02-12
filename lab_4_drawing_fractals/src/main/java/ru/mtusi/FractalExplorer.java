@@ -40,7 +40,10 @@ public class FractalExplorer {
         logger.info("add imageDisplay");
 
         JButton findPathButton = new JButton("Return");
-        findPathButton.addActionListener(e -> drawFractal());
+        findPathButton.addActionListener(e -> {
+            fractal.getInitialRange(range);
+            drawFractal();
+        });
         contentPane.add(findPathButton, BorderLayout.SOUTH);
 
         imageDisplay.repaint();
